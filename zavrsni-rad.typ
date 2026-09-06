@@ -25,7 +25,7 @@
 #show heading: set text(hyphenate: false)
 
 #show figure.where(
-  kind: table
+  kind: table,
 ): set figure.caption(position: top)
 #show figure.where(kind: raw): set figure(supplement: [Листинг])
 #set ref(supplement: none)
@@ -33,31 +33,31 @@
 
 #import "@preview/hydra:0.6.2": hydra
 
-#show heading.where(level: 1): (it) => {
-    pagebreak(to: "odd", weak: true)
-    set block(spacing: 8pt)
-    if heading.numbering != none {
-        text("Глава " + counter(heading).display(), size: 22pt)
-    }
-    set par(justify: false)
-    line(length: 100%)
-    rect(align(right + horizon, text(it.body, size: 22pt)), fill: white, width: 100%)
-    line(length: 100%)
-    v(1em)
+#show heading.where(level: 1): it => {
+  pagebreak(to: "odd", weak: true)
+  set block(spacing: 8pt)
+  if heading.numbering != none {
+    text("Глава " + counter(heading).display(), size: 22pt)
+  }
+  set par(justify: false)
+  line(length: 100%)
+  rect(align(right + horizon, text(it.body, size: 22pt)), fill: white, width: 100%)
+  line(length: 100%)
+  v(1em)
 }
 
 #outline(title: [Садржај], depth: 2)
 
 #set page(header: context {
-     // Хедери са текућим секцијама не иду на страницу са поглављима
-     if not (query(heading.where(level: 1)).any(h => h.location().page() == here().page())) {
-        if calc.odd(here().page()) {
-            align(right, emph(hydra(1)))
-        } else {
-            align(left, emph(hydra(2)))
-        }
-        line(length: 100%)
-     }
+  // Хедери са текућим секцијама не иду на страницу са поглављима
+  if not (query(heading.where(level: 1)).any(h => h.location().page() == here().page())) {
+    if calc.odd(here().page()) {
+      align(right, emph(hydra(1)))
+    } else {
+      align(left, emph(hydra(2)))
+    }
+    line(length: 100%)
+  }
 })
 
 #pagebreak(to: "odd", weak: false)
@@ -76,41 +76,42 @@
 #set heading(numbering: none)
 #show outline: set heading(outlined: true)
 #context {
-    if query(figure.where(kind: image)).len() > 0  [
-        = Списак слика
-        <spisak-slika>
-        #outline(title: none, target: figure.where(kind: image))
-    ]
+  if query(figure.where(kind: image)).len() > 0 [
+    = Списак слика
+    <spisak-slika>
+    #outline(title: none, target: figure.where(kind: image))
+  ]
 
-    if query(figure.where(kind: image)).len() > 0  [
-        = Списак листинга
-        <spisak-listinga>
-        #outline(title: none, target: figure.where(kind: raw))
-    ]
+  if query(figure.where(kind: image)).len() > 0 [
+    = Списак листинга
+    <spisak-listinga>
+    #outline(title: none, target: figure.where(kind: raw))
+  ]
 
-    if query(figure.where(kind: table)).len() > 0  [
-        = Списак табела
-        <spisak-tabela>
-        #outline(title: none, target: figure.where(kind: table))
-    ]
+  if query(figure.where(kind: table)).len() > 0 [
+    = Списак табела
+    <spisak-tabela>
+    #outline(title: none, target: figure.where(kind: table))
+  ]
 }
 
 
 
 #show figure: it => {
-    set text(size: 9pt)
-    set block(breakable: true)
-    set table(
-        columns: (1fr, 4fr),
-        align: left,
-        inset: 8pt,
-        stroke: 0pt)
-    it
+  set text(size: 9pt)
+  set block(breakable: true)
+  set table(
+    columns: (1fr, 4fr),
+    align: left,
+    inset: 8pt,
+    stroke: 0pt,
+  )
+  it
 }
 
 // TODO: Додаци - искоментарисати ако се не користе
-#include "poglavlja/dodatak 1 - skracenice.typ"
-#include "poglavlja/dodatak 2 - pojmovi.typ"
+// #include "poglavlja/dodatak 1 - skracenice.typ"
+// #include "poglavlja/dodatak 2 - pojmovi.typ"
 
 #include "biografija.typ"
 
