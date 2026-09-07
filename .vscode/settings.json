@@ -1,15 +1,19 @@
 {
-  "files.associations": {
-    "*.typ": "typst"
-  },
+    "files.associations": {
+        "*.typ": "typst"
+    },
 
-  "tinymist.formatterMode": "typstyle",
-  "tinymist.formatterProseWrap": true,
-  "tinymist.formatterPrintWidth": 100,
+    "tinymist.formatterMode": "typstyle",
+    "tinymist.formatterProseWrap": true,
+    "tinymist.formatterPrintWidth": 100,
 
-  "[typst]": {
-    "editor.defaultFormatter": "myriad-dreamin.tinymist",
-    "editor.formatOnSave": true,
-    "editor.unicodeHighlight.ambiguousCharacters": false
-  }
+    "tinymist.typstExtraArgs": [
+        "zavrsni-rad.typ"
+    ],
+
+    "[typst]": {
+        "editor.defaultFormatter": "myriad-dreamin.tinymist",
+        "editor.formatOnSave": true,
+        "editor.unicodeHighlight.ambiguousCharacters": false
+    }
 }
