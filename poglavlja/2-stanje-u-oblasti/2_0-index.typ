@@ -12,3 +12,4 @@
 #include "2_1-fizioloske-osnove.typ"
 #include "2_2-osnova-ppg.typ"
 #include "2_3-karakteristike-ppg-signala.typ"
+#include "2_4-obrada-signala.typ"
