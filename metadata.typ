@@ -1,4 +1,4 @@
-#let format_strane = "iso-b5" // могуће вредности: iso-b5, a4
+#let format_strane = "a4" // могуће вредности: iso-b5, a4
 #let naslov = "Шаблон и упутство за писање завршних радова"
 #let autor = "Нада Зарић"
 
