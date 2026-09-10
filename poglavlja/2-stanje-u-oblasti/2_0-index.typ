@@ -15,3 +15,4 @@
 #include "2_4-obrada-signala.typ"
 #include "2_5-izdvajanje-fizoloskih-info.typ"
 #include "2_6-biofidbek.typ"
+#include "2_7-nosivi-uredjaji.typ"
