@@ -69,8 +69,9 @@
 // TODO: Овде укључујете поглавља
 #include "poglavlja/1-uvod.typ"
 #include "poglavlja/2-stanje-u-oblasti/2_0-index.typ"
-#include "poglavlja/7-zakljucak.typ"
-
+#include "poglavlja/3-metodologija/3_0-index.typ"
+#include "poglavlja/4-eksperiment-rezultati/index.typ"
+#include "poglavlja/5-zakljucak.typ"
 
 
 #set heading(numbering: none)
