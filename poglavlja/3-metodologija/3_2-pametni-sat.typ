@@ -1,8 +1,58 @@
 == Реализација апликације за паметни сат
 
-- #highlight(fill: yellow)[Pristup senzorima pametnog sata.]
-- #highlight(fill: yellow)[Kako se prikupljaju podaci o srčanoj frekvenciji, temperaturi kože, SpO2
-    i PPG signalu.]
-- #highlight(fill: yellow)[Razlika između kontinuiranih mjerenja i mjerenja na zahtjev.]
-- #highlight(fill: yellow)[Kako se upravlja pokretanjem, tokom i završetkom mjerenja.]
-- #highlight(fill: yellow)[Relevantni dijagrami, kraći listinzi, prikazi interfejsa sata.]
+// - #highlight(fill: yellow)[Pristup senzorima pametnog sata.]
+// - #highlight(fill: yellow)[Kako se prikupljaju podaci o srčanoj frekvenciji, temperaturi kože, SpO2
+//     i PPG signalu.]
+// - #highlight(fill: yellow)[Razlika između kontinuiranih mjerenja i mjerenja na zahtjev.]
+// - #highlight(fill: yellow)[Kako se upravlja pokretanjem, tokom i završetkom mjerenja.]
+// - #highlight(fill: yellow)[Relevantni dijagrami, kraći listinzi, prikazi interfejsa sata.]
+
+=== Приступ сензорима и управљање мјерењима
+
+Приступ здравственим сензорима у апликацији за паметни сат реализован је употребом заједничке
+компоненте `HealthTrackerProvider`, чија је главна улога омогућавање приступа _Samsung Health Sensor
+SDK_-у. Прије приступа сензорима апликација провјерава да ли је корисник одобрио потребна права за
+приступ здравственим сензорима. Након успјешног повезивања са сервисом, апликација може да приступи
+одговарајућем сензору и започне преузимање података током мјерења. На тај начин је приступ
+различитим здравственим сензорима обједињен у оквиру једне компоненте.
+
+У апликацији су реализована два начина мјерења: континуирано мјерење и мјерење на захтјев корисника.
+Континуирани начин примјењује се за мјерење срчане фреквенције и температуре коже, а
+`SensorTrackingService` омогућава да ова мјерења остану активна током цијелог рада апликације,
+независно од тренутно приказаног екрана. Мјерење на захтјев користи се за одређивање засићености
+крви кисеоником и прикупљање PPG сигнала, при чему мјерење започиње на захтјев корисника и траје до
+његовог завршетка. Основне карактеристике реализованих мјерења и подаци који се током њих преузимају
+приказани су у табели @tab-senzori.
+
+#figure(
+  table(
+    columns: (1.5fr, 1.5fr, 0.8fr, 2.5fr),
+    align: left,
+
+    table.header(
+      [*Назив*], [*Начин мјерења у апликацији*], [*Врста података*], [*Подаци преузети из мјерења*]
+    ),
+
+    [Срчана фреквенција],
+    [Континуирано],
+    [Обрађени],
+    [Срчана фреквенција, статус мјерења и временска ознака],
+
+    [Температура коже],
+    [Континуирано],
+    [Обрађени],
+    [Температура коже, температура окружења, статус мјерења и временска ознака],
+
+    [Засићеност крви кисеоником],
+    [На захтјев корисника],
+    [Обрађени],
+    [Засићеност крви кисеоником, срчана фреквенција, статус мјерења и временска ознака],
+
+    [PPG сигнал],
+    [На захтјев корисника],
+    [Сирови],
+    [Зелени, црвени и инфрацрвени канал, статус сваког канала и временска ознака],
+  ),
+  caption: [Карактеристике мјерења реализованих у апликацији за паметни сат.],
+) <tab-senzori>
+
