@@ -1,9 +1,50 @@
 == Архитектура система
 
-- #highlight(fill: yellow)[Koje dvije aplikacije su dio sistema i koja je uloga svake od njih.]
-- #highlight(fill: yellow)[Hardverska i softverska osnova sistema i glavne korišćene tehnologije.]
-- #highlight(fill: yellow)[Kako su aplikacije interno organizovane i koje su njihove glavne
-    funkcionalne cjeline.]
-- #highlight(fill: yellow)[Koji podaci se prikupljaju, obrađuju, prenose, prikazuju i čuvaju.]
-- #highlight(fill: yellow)[Osnovni tok podataka kroz sistem i veza između sata i telefona.]
-- #highlight(fill: yellow)[Dijagram arhitekture sistema.]
+// - #highlight(fill: yellow)[Koje dvije aplikacije su dio sistema i koja je uloga svake od njih.]
+// - #highlight(fill: yellow)[Hardverska i softverska osnova sistema i glavne korišćene tehnologije.]
+// - #highlight(fill: yellow)[Kako su aplikacije interno organizovane i koje su njihove glavne
+//     funkcionalne cjeline.]
+// - #highlight(fill: yellow)[Koji podaci se prikupljaju, obrađuju, prenose, prikazuju i čuvaju.]
+// - #highlight(fill: yellow)[Osnovni tok podataka kroz sistem i veza između sata i telefona.]
+// - #highlight(fill: yellow)[Dijagram arhitekture sistema.]
+
+Систем је организован тако да паметни сат и мобилни телефон имају различите улоге у прикупљању,
+обради, приказу и чувању података. Паметни сат непосредно приступа сензорима и приказује тренутне
+вриједности срчане фреквенције, температуре коже и засићености крви кисеоником, док се PPG сигнал
+додатно обрађује током мјерења у реалном времену. Сви прикупљени физиолошки подаци доступни су и у
+мобилној апликацији, а након завршетка PPG мјерења на телефон се преноси и комплетна мјерна сесија
+са сировим и обрађеним узорцима. Сачуване PPG сесије могу се накнадно прегледати, а прикупљени
+подаци могу се извести за даљу анализу. На тај начин се прикупљање и обрада података током мјерења
+обављају на паметном сату, док мобилна апликација омогућава њихов детаљнији преглед и чување.
+Основне компоненте система и везе између њих приказане су на слици @fig-arhitektura.
+
+#figure(
+  image("../../slike/arhitktura-sistema.png", width: 95%),
+  caption: [Архитектура система.],
+) <fig-arhitektura>
+
+=== Хардверске и софтверске компоненте
+
+За развој апликације за паметни сат коришћен је _Samsung Galaxy Watch6_ са _Wear OS_ оперативним
+системом. Уређај садржи сензоре који омогућавају праћење различитих физиолошких параметара, од којих
+су у овом раду коришћени подаци о срчаној фреквенцији, температури коже и засићености крви
+кисеоником, као и сирови фотоплетизмографски сигнал. Прикупљање ових података реализовано је помоћу
+_Samsung Health Sensor SDK_-а, који омогућава _Wear OS_ апликацијама приступ сировим и обрађеним
+подацима са здравствених сензора _Galaxy Watch_ уређаја @samsung_health_sensor_sdk. Другу хардверску
+компоненту система представља мобилни телефон са _Android_ оперативним системом, на којем се
+извршава мобилна апликација.
+
+Обје апликације реализоване су у програмском језику _Kotlin_. За израду њиховог корисничког
+интерфејса коришћен је _Jetpack Compose_, декларативни скуп алата за развој корисничких интерфејса
+_Android_ апликација @jetpack_compose. Пошто паметни сатови имају мању површину екрана и специфичне
+начине навигације у односу на мобилне телефоне, у апликацији за сат коришћене су и _Compose for Wear
+OS_ библиотеке, које обезбјеђују компоненте прилагођене таквим уређајима @compose_wear_os.
+
+Размјена података између паметног сата и мобилног телефона реализована је посредством интерфејса
+_Wearable Data Layer API_, који омогућава пренос и синхронизацију података између _Wear OS_ уређаја
+и упареног _Android_ телефона @wearable_data_layer. За локално чување PPG мјерних сесија мобилна
+апликација користи _Room_, библиотеку за рад са локалном релационом базом података у _Android_
+апликацијама @room. Извоз сачуваних PPG података у XLSX формату омогућен је помоћу библиотеке
+_FastExcel_.
+
+=== Организација и функционалне цјелине софтверског система
