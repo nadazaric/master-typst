@@ -1,0 +1,18 @@
+%YAML 1.2
+---
+name: Pseudocode
+scope: source.pseudocode
+
+file_extensions:
+  - pseudo
+
+contexts:
+  main:
+    - match: '\b(ЗА|АКО|ИНАЧЕ|ИЛИ)\b'
+      scope: keyword.control.pseudocode
+
+    - match: '\b(прихвати|замијени|израчунај|одреди|сачувај|постави|додај|означи )\b'
+      scope: support.function.pseudocode
+
+    - match: '\bN\b'
+      scope: variable.parameter.pseudocode

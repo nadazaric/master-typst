@@ -27,7 +27,13 @@
 #show figure.where(
   kind: table,
 ): set figure.caption(position: top)
+
 #show figure.where(kind: raw): set figure(supplement: [Листинг])
+
+#set raw(
+  syntaxes: ("pseudocode.sublime-syntax",),
+)
+
 #set ref(supplement: none)
 
 
