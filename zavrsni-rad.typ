@@ -15,13 +15,15 @@
 
 #set text(lang: "sr")
 
+#let reference-color = black
+
 #set document(title: naslov, author: autor)
 #set heading(numbering: "1.1")
 #set text(font: "Liberation Serif", size: 11pt)
 #set par(justify: true)
-#show link: set text(blue)
-#show cite: set text(blue)
-#show ref: set text(blue)
+#show link: set text(reference-color)
+#show cite: set text(reference-color)
+#show ref: set text(reference-color)
 #show heading: set text(hyphenate: false)
 
 #show figure.where(
