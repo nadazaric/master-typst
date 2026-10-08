@@ -29,9 +29,9 @@
     [PPI],
     [Pulse-to-Pulse Interval (интервал између узастопних пулсева)],
     [PR],
-    [Pulse Rate (фреквенција пулса)],
+    [Pulse Rate (пулс)],
     [PRV],
-    [Pulse Rate Variability (варијабилност фреквенције пулса)],
+    [Pulse Rate Variability (варијабилност пулса)],
     [RMSSD],
     [Root Mean Square of Successive Differences (квадратни коријен средње вриједности квадрата
       разлика узастопних интервала)],
