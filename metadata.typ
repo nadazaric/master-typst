@@ -1,9 +1,9 @@
 #let format_strane = "a4" // могуће вредности: iso-b5, a4
-#let naslov = "Мастер рад"
+#let naslov = "Развој система за фотоплетизмографски биофидбек примјеном паметног сата"
 #let autor = "Нада Зарић"
 
 // На енглеском
-#let naslov_eng = "Template and tutorial for thesis preparation"
+#let naslov_eng = "Development of a Smartwatch-Based Photoplethysmography Biofeedback System"
 #let autor_eng = "Nada Zarić"
 
 #let indeks = "R2 15/2024"
@@ -21,17 +21,26 @@
 
 #let godina = [#datetime.today().year()]
 
-#let kljucne_reci = "Шаблон, завршни рад, упутство"
+#let kljucne_reci = "фотоплетизмографија, паметни сат, биофидбек, дигитална обрада сигнала"
 #let apstrakt = [
-  Овај документ представља упутство за писање завршних радова на Факултету техничких наука
-  Универзитета у Новом Саду. У исто време је и шаблон за Typst.
+  Рад описује систем за праћење физиолошких параметара заснован на паметном сату и мобилном
+  телефону. Посебан дио система намијењен је прикупљању и обради фотоплетизмографског сигнала и
+  реализацији вођеног дисања уз биофидбек. Систем је испитан кроз три узастопна мјерења са спонтаним
+  и вођеним дисањем. Резултати су показали израженију варијабилност пулсних интервала и периодичне
+  промјене пулса током вођеног дисања, док су разлике у просјечном пулсу између мјерења биле мање
+  изражене.
 ]
 
 // На енглеском
-#let kljucne_reci_eng = "Template, thesis, tutorial"
+#let kljucne_reci_eng = "photoplethysmography, smartwatch, biofeedback, digital signal processing"
 #let apstrakt_eng = [
-  This document provides guidelines for writing final theses at the Faculty of Technical Sciences,
-  University of Novi Sad. At the same time, it serves as a Typst template.
+  This paper describes a system for monitoring physiological parameters based on a smartwatch and a
+  mobile phone. A dedicated part of the system is designed for the acquisition and processing of
+  photoplethysmography signals, as well as for implementing guided breathing with biofeedback. The
+  system was evaluated through three consecutive measurements involving spontaneous and guided
+  breathing. The results showed increased variability of pulse intervals and periodic changes in
+  pulse rate during guided breathing, while differences in average pulse rate between the
+  measurements were less pronounced.
 ]
 
 // TODO: Текст задатка добијате од ментора. Заменити доле #lorem(100) са текстом задатка.
