@@ -27,7 +27,7 @@
     [PPG],
     [Photoplethysmography (фотоплетизмографија)],
     [PPI],
-    [Pulse-to-Pulse Interval (интервал између узастопних пулсева)],
+    [Pulse-to-Pulse Interval (интервал између узастопних пулсних таласа)],
     [PR],
     [Pulse Rate (пулс)],
     [PRV],
