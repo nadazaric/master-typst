@@ -29,7 +29,7 @@ DC) представља споро промјењиви основни ниво
 
 
 #figure(
-  image("../../slike/ppg-morfologija.png", width: auto),
+  image("../../slike/ppg-morfologija.png"),
   caption: [Карактеристични дијелови и тачке PPG таласа.],
 ) <fig-ppg-morfologija>
 

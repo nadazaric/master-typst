@@ -39,7 +39,7 @@ PPG мјерења, које су приказане на слици @fig-ppg-ti
 су паметни сатови и наруквице за праћење физичке активности @charlton2022.
 
 #figure(
-  image("../../slike/ppg-tipovi.png", width: auto),
+  image("../../slike/ppg-tipovi.png"),
   caption: [Конфигурације PPG мјерења: (а) трансмисиона и (б) рефлексиона.],
 ) <fig-ppg-tipovi>
 

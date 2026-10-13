@@ -26,7 +26,7 @@ API_. Начин преноса разликује се у зависности 
 физиолошког очитавања приказан је на слици @fig-sekvencialni-1.
 
 #figure(
-  image("../../slike/prenos-podataka-1.png"),
+  image("../../slike/prenos-podataka-1.png", width: 95%),
   caption: [Ток преноса тренутних физиолошких вриједности.],
 ) <fig-sekvencialni-1>
 
@@ -48,6 +48,6 @@ API_. Начин преноса разликује се у зависности 
 @fig-sekvencialni-2.
 
 #figure(
-  image("../../slike/prenos-podataka-2.png"),
+  image("../../slike/prenos-podataka-2.png", width: 95%),
   caption: [Ток преноса и чувања PPG мјерне сесије.],
 ) <fig-sekvencialni-2>
