@@ -125,6 +125,8 @@
 #include "biografija.typ"
 
 #show "Available at:": "Доступно на "
+#show "Accessed:": "Приступњено:"
+#show "Online": "На мрежи"
 #bibliography(title: [Литература], "literatura.bib")
 #checkbib()
 

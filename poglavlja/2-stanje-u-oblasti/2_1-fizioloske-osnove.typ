@@ -11,7 +11,7 @@
 
 #figure(
   image("../../slike/cirkulacija.png", width: auto, height: 50%),
-  caption: [Плућна и системска циркулација.],
+  caption: [Плућна и системска циркулација @znanje_krvni_limfni_sistem.],
 ) <fig-cirkulacija>
 
 Рад срца одвија се циклично, при чему се током сваког срчаног циклуса смјењују периоди контракције и
