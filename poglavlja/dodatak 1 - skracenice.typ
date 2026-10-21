@@ -11,11 +11,11 @@
     table.header[*Скраћеница*][*Опис*],
 
     [AC],
-    [Alternating Current (пулсатилна компонента PPG сигнала)],
+    [Alternating Current (пулсирајућа компонента PPG сигнала)],
     [API],
     [Application Programming Interface (апликациони програмски интерфејс)],
     [DC],
-    [Direct Current (непулсатилна компонента PPG сигнала)],
+    [Direct Current (непулсирајућа компонента PPG сигнала)],
     [HRV],
     [Heart Rate Variability (варијабилност срчаног ритма)],
     [HRVB],
