@@ -29,7 +29,7 @@ PPG сигнал састоји се од понављајућих таласн�
 таласа приказани су на слици @fig-ppg-morfologija.
 
 #figure(
-  image("../../slike/ppg-morfologija.png"),
+  image("../../slike/ppg-morfologija.png", width: 92%),
   caption: [Карактеристични дијелови и тачке PPG таласа.],
 ) <fig-ppg-morfologija>
 
